@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 
-import './App.css';
+
 
 function App() {
   const [quotes, setQuotes] = useState('');
@@ -47,7 +47,7 @@ function App() {
         getQuote();
         updateColor();
       }} id="new-quote">New Quote</button>
-      <a className='button' target="_blank" href="twitter.com/intent/tweet" id="tweet-quote">Tweet Quote</a>
+      <a className='button' target="_blank" href={`https://twitter.com/intent/tweet?text=${quotes.text}   -${quotes.author}`} id="tweet-quote" rel='noopener noreferrer'>Tweet Quote</a>
     </wrapper>
   );
 }
